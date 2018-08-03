@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta name="Cache-Control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>test_my_site · YALU STUDIO</title>
+    <title>PyCharm #1 Python File template · YALU STUDIO</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -180,7 +180,7 @@
 }( typeof global !== "undefined" ? global : this ) );
 </script>
 
-    <link rel="icon" href= "/assets/favicon.ico" />
+    <link rel="icon" href= "/assets/html-coding.ico" />
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
     <link rel="preload" href="/scripts/main.js" as="script" />
@@ -207,14 +207,14 @@
     
     <div class="banner">
             <div class="blog-title">
-                <a href="/" >YALU STUDIO</a>
+                <a href="/" >&lt; YALU STUDIO &gt;</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">test_my_site</a>
+                <a href="#" class="post-name">PyCharm #1 Python File template</a>
             </div>
     </div>
     
-    <a class="home-link" href=/>YALU STUDIO</a>
+    <a class="home-link" href=/>< YALU STUDIO ></a>
 </header>
     <div class="wrapper">
         <div class="site-intro" style=
@@ -242,7 +242,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            test_my_site
+            PyCharm #1 Python File template
             <!-- 404 -->
             
         </h1>
@@ -261,12 +261,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count">0</span> / Reading time: <span class="post-count">1 min</span></span>
+                        <span>Word count: <span class="post-count">109</span> / Reading time: <span class="post-count">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/06/22</span>
+                    <span class="post-intro-time">2018/08/03</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -390,16 +390,91 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        
+        <p>To automatically insert information at the top when creating a Python file, go to:</p>
+<p>(Mac)        PyCharm &gt; Preferences… &gt; File and Code Templates &gt; Python Script</p>
+<p>(Windows)    File &gt; Settings &gt; Editor &gt; File and Code Templates &gt; Python Script</p>
+<p>My current setting:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line"># -*- coding:utf-8 -*-</span><br><span class="line"># @Filename:    $&#123;NAME&#125;.py</span><br><span class="line"># @Author:      $&#123;USER&#125;</span><br><span class="line"># @Time:        $&#123;DATE&#125; $&#123;TIME&#125;</span><br></pre></td></tr></table></figure>
+<p>Some variables that can be used:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Variable</th>
+<th style="text-align:center">Function</th>
+<th style="text-align:center">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>${PROJECT_NAME}</code></td>
+<td style="text-align:center">current project’s name</td>
+<td style="text-align:center">Python_Scripts</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>${NAME}</code></td>
+<td style="text-align:center">filename</td>
+<td style="text-align:center">test</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>${USER}</code></td>
+<td style="text-align:center">current user</td>
+<td style="text-align:center">Yalu</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>${DATE}</code></td>
+<td style="text-align:center">current system date</td>
+<td style="text-align:center">3/08/2018</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>${TIME}</code></td>
+<td style="text-align:center">current system time</td>
+<td style="text-align:center">11:32 PM</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>${YEAR}</code></td>
+<td style="text-align:center">current year</td>
+<td style="text-align:center">2018</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>${MONTH}</code></td>
+<td style="text-align:center">current month</td>
+<td style="text-align:center">08</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>${MONTH_NAME_SHORT}</code></td>
+<td style="text-align:center">current month</td>
+<td style="text-align:center">Aug</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>${MONTH_NAME_FULL}</code></td>
+<td style="text-align:center">current month</td>
+<td style="text-align:center">August</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>${DAY}</code></td>
+<td style="text-align:center">current day</td>
+<td style="text-align:center">03</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>${HOUR}</code></td>
+<td style="text-align:center">current hour</td>
+<td style="text-align:center">11</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>${MINUTE}</code></td>
+<td style="text-align:center">current minute</td>
+<td style="text-align:center">32</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>${PRODUCT_NAME}</code></td>
+<td style="text-align:center">current IDE</td>
+<td style="text-align:center">PyCharm</td>
+</tr>
+</tbody>
+</table>
+
     </article>
     <!-- license  -->
-    
-        <div class="license-wrapper">
-            <p>原文作者: <a href="http://yoursite.com">Yalu</a>
-            <p>原文链接: <a href="http://yoursite.com/2018/06/22/test-my-site/">http://yoursite.com/2018/06/22/test-my-site/</a>
-            <p>发表日期: <a href="http://yoursite.com/2018/06/22/test-my-site/">June 22nd 2018, 12:04:14</a>
-            <p>版权声明: 本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
-        </div>
     
     <!-- paginator  -->
     <ul class="post-paginator">
@@ -571,7 +646,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/22</span><a class="archive-post-title" href= "/2018/06/22/test-my-site/" >test_my_site</a>
+            <span class="archive-post-date">08/03</span><a class="archive-post-title" href= "/2018/08/03/Pycharm-1-Python-File-template/" >PyCharm #1 Python File template</a>
         </li>
     
     
