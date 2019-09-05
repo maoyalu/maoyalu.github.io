@@ -271,7 +271,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count">120</span> / Reading time: <span class="post-count">1 min</span></span>
+                        <span>Word count: <span class="post-count">202</span> / Reading time: <span class="post-count">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -405,7 +405,8 @@ height:50vh;
 <li>In order to enable the return key function, you should implement the <code>textFieldShouldReturn</code> function and set the delegate of the text field to self.</li>
 <li>In order to close the keyboard when users touch the screen, you can override the <code>touchesBegan</code> function</li>
 </ol>
-<h3 id="Sample-code"><a href="#Sample-code" class="headerlink" title="Sample code"></a>Sample code</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">exampleViewController</span>: <span class="title">UIViewController</span>, <span class="title">UITextFieldDelegate</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">        </span><br><span class="line">        example1TextField.delegate = <span class="keyword">self</span></span><br><span class="line">        example2TextField.delegate = <span class="keyword">self</span></span><br><span class="line">        example3TextField.delegate = <span class="keyword">self</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">textFieldShouldReturn</span><span class="params">(<span class="number">_</span> textField: UITextField)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.view.endEditing(<span class="literal">true</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">touchesBegan</span><span class="params">(<span class="number">_</span> touches: Set&lt;UITouch&gt;, with event: UIEvent?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.view.endEditing(<span class="literal">true</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="Fail-to-dismiss-keyboard-in-scroll-views"><a href="#Fail-to-dismiss-keyboard-in-scroll-views" class="headerlink" title="Fail to dismiss keyboard in scroll views"></a>Fail to dismiss keyboard in scroll views</h5><p>Inside a scroll view, <code>touchesBegan</code> function does not work. In order to solve this, one simple way is to go to the storyboard, select the scroll view. In the inspector, find keyboard attribute, and set it to <code>Dismiss on drag</code>. Although it is not as smooth as touches, it can temporarily solve the problem.</p>
+<h3 id="Sample-code"><a href="#Sample-code" class="headerlink" title="Sample code"></a>Sample code</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">exampleViewController</span>: <span class="title">UIViewController</span>, <span class="title">UITextFieldDelegate</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">        </span><br><span class="line">        example1TextField.delegate = <span class="keyword">self</span></span><br><span class="line">        example2TextField.delegate = <span class="keyword">self</span></span><br><span class="line">        example3TextField.delegate = <span class="keyword">self</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">textFieldShouldReturn</span><span class="params">(<span class="number">_</span> textField: UITextField)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.view.endEditing(<span class="literal">true</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Dismiss the keyboard when user touches the screen</span></span><br><span class="line">    <span class="comment">// It doesn't work when it's in a scroll view</span></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">touchesBegan</span><span class="params">(<span class="number">_</span> touches: Set&lt;UITouch&gt;, with event: UIEvent?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.view.endEditing(<span class="literal">true</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </article>
     <!-- license  -->
@@ -558,7 +559,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-code"><span class="toc-number">1.</span> <span class="toc-text">Sample code</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Fail-to-dismiss-keyboard-in-scroll-views"><span class="toc-number">1.</span> <span class="toc-text">Fail to dismiss keyboard in scroll views</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-code"><span class="toc-number"></span> <span class="toc-text">Sample code</span></a>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -571,6 +572,10 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
     
     
     
@@ -839,8 +844,6 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
-    
         <span class="sidebar-tag-name" data-tags="Swift"><span class="iconfont-archer">&#xe606;</span>Swift</span>
     
         <span class="sidebar-tag-name" data-tags="iOS"><span class="iconfont-archer">&#xe606;</span>iOS</span>
@@ -849,13 +852,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="VirtuaBox"><span class="iconfont-archer">&#xe606;</span>VirtuaBox</span>
     
+        <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
+    
         <span class="sidebar-tag-name" data-tags="Raspberry Pi"><span class="iconfont-archer">&#xe606;</span>Raspberry Pi</span>
+    
+        <span class="sidebar-tag-name" data-tags="PyCharm"><span class="iconfont-archer">&#xe606;</span>PyCharm</span>
     
         <span class="sidebar-tag-name" data-tags="Keyboard"><span class="iconfont-archer">&#xe606;</span>Keyboard</span>
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
-    
-        <span class="sidebar-tag-name" data-tags="PyCharm"><span class="iconfont-archer">&#xe606;</span>PyCharm</span>
     
         <span class="sidebar-tag-name" data-tags="VirtualBox"><span class="iconfont-archer">&#xe606;</span>VirtualBox</span>
     
