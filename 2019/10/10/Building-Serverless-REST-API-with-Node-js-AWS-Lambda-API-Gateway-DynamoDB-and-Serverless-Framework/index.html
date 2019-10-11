@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta name="Cache-Control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>YALU STUDIO</title>
+    <title>Building Serverless REST API with Node.js, AWS Lambda, API Gateway, DynamoDB, and Serverless Framework · YALU STUDIO</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -70,6 +70,8 @@
 
     <link rel="preload" href= /css/style.css?v=20180721 as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= /css/mobile.css?v=20180721 media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -194,12 +196,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >&lt; YALU STUDIO &gt;</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Building Serverless REST API with Node.js, AWS Lambda, API Gateway, DynamoDB, and Serverless Framework</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>< YALU STUDIO ></a>
 </header>
@@ -213,24 +226,84 @@
 
 
 
+height:50vh;
+
 >
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            Building Serverless REST API with Node.js, AWS Lambda, API Gateway, DynamoDB,...
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "AWS">AWS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Lambda">Lambda</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Serverless">Serverless</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Node.js">Node.js</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "API">API</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "DynamoDB">DynamoDB</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count">315</span> / Reading time: <span class="post-count">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/10/10</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -331,87 +404,104 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/02/PyCharm-Git-Push-rejected-Push-to-origin-master-was-rejected/" >
-            
-                <span>PyCharm Git Push rejected: Push to origin/master was rejected</span>
-        </a>
-        <div class="abstract-content">
-            When I tried to commit and push to my GitHub repository, it shows the error below:
-1Push rejected: Push to origin/master was rejected
-Solution:
-Go to the root directory of the project
+            <main class="main post-page">
+    <article class="article-entry">
+        <ol>
+<li><p>Install the serverless framework</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g serverless</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="2">
+<li><p>Configure AWS IAM keys</p>
+<p>Replace [Access key ID] and [Secret access key] with your IAM credentials. If you don’t have it, create one in the AWS console, My Security Credentials.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">serverless config credentials --provider aws --key [Access key ID] --secret [Secret access key]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Generate a boilerplate</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">serverless create --template aws-nodejs --path [folder]</span><br></pre></td></tr></table></figure>
+<p>Then it will create a boilerplate using the template for Node.js. Go into the root folder, and install the required packages.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> [folder]</span><br><span class="line">npm init -y &amp;&amp; npm install</span><br></pre></td></tr></table></figure>
+<p>And also install <code>express</code> and <code>serverless-http</code> with the command below:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express serverless-http</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="4">
+<li>Expose an HTTP endpoint</li>
+</ol>
+<p>In the <code>serverless.yml</code> file, comment out and change the following code:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">functions:</span></span><br><span class="line">	<span class="attr">app:</span></span><br><span class="line">		<span class="attr">handler:</span> <span class="string">app.server</span></span><br><span class="line"><span class="attr">        events:</span></span><br><span class="line"><span class="attr">            - http:</span></span><br><span class="line"><span class="attr">                path:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">                method:</span> <span class="string">get</span></span><br><span class="line"><span class="attr">                cors:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li><p>Set up Express</p>
+<p>Delete <code>handler.js</code> file, and create one named <code>app.js</code>:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"><span class="keyword">const</span> sls = <span class="built_in">require</span>(<span class="string">'serverless-http'</span>);</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/'</span>, <span class="keyword">async</span> (req, res, next) =&gt; &#123;</span><br><span class="line">    res.status(<span class="number">200</span>).send(<span class="string">'Hello Serverless!'</span>)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports.server = sls(app);</span><br></pre></td></tr></table></figure>
+<p>Noticed that, AWS Lambda does not support the ES6 <code>import</code> specifier (at the time of 10/10/2019). <code>import express from &#39;express&#39;</code> will cause an internal server error. And in the log we can see that it says <code>&quot;Runtime.UserCodeSyntaxError: SyntaxError: Unexpected identifier&quot;</code></p>
+</li>
+</ol>
+<ol start="6">
+<li>Deploy</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">serverless deploy</span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li><p>Test the API</p>
+<p>In the output, we can see that it exposes an endpoint probably like this.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">endpoints:</span><br><span class="line">	GET - https://xxxx.execute-api.xx-xxxx-x.amazonaws.com/xxx/</span><br></pre></td></tr></table></figure>
+<p>Let’s try it with the command below:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://xxxx.execute-api.xx-xxxx-x.amazonaws.com/xxx/</span><br></pre></td></tr></table></figure>
+<p>And we will get our message back, “It’s working”.</p>
+</li>
+</ol>
 
-Right click, choose ‘Git Bash here’
-
-Use command
-
-1git pull origin master --allow-unrelated-histories
-Edit file
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Git">Git</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "PyCharm">PyCharm</a>
-    
-</div>
-            
-        </div>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/08/04/PyCharm-Python-file-template/" >
-            
-                <span>PyCharm Python file template</span>
-        </a>
-        <div class="abstract-content">
-            To automatically insert information at the top when creating a Python file, go to:
-(Mac)        PyCharm &gt; Preferences… &gt; File and Code Templates &gt; Python Script
-(Windows)    File &gt; Settings &gt; Editor &gt; File and Code Templates &gt; Python Script
-My current setting:
-12345#!/usr/bin...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "PyCharm">PyCharm</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Python">Python</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2019/10/11/Translate-PDF-using-Google-Drive/" title= Translate PDF using Google Drive >
+                    <div class="nextTitle">Translate PDF using Google Drive</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/09/01/Dismiss-keyboard-in-iOS-Swift/" title= Dismiss keyboard in iOS (Swift) >
+                    <div class="prevTitle">Dismiss keyboard in iOS (Swift)</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid= MTAyMC8zODU4Ny8xNTExNQ==>
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!--PC和WAP自适应版-->
+
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -500,6 +590,24 @@ My current setting:
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -920,6 +1028,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
