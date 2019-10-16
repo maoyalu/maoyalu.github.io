@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta name="Cache-Control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>YALU STUDIO</title>
+    <title>Build a bot with Lambda to auto update my GitHub · YALU STUDIO</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -70,6 +70,8 @@
 
     <link rel="preload" href= /css/style.css?v=20180721 as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= /css/mobile.css?v=20180721 media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -194,12 +196,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >&lt; YALU STUDIO &gt;</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Build a bot with Lambda to auto update my GitHub</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>< YALU STUDIO ></a>
 </header>
@@ -213,24 +226,84 @@
 
 
 
+height:50vh;
+
 >
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            Build a bot with Lambda to auto update my GitHub
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "AWS">AWS</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Lambda">Lambda</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Serverless">Serverless</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Node.js">Node.js</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Git">Git</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "GitHub">GitHub</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count">853</span> / Reading time: <span class="post-count">5 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/10/16</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -331,378 +404,82 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/10/16/Build-a-bot-with-Lambda-to-auto-update-my-GitHub/" >
-            
-                <span>Build a bot with Lambda to auto update my GitHub</span>
-        </a>
-        <div class="abstract-content">
-            In job ads, companies usually request candidates to have an active GitHub account to demonstrate their passion for programming. However, lack of green tiles in the heatmap doesn’t necessarily mean that the person is not coding at all (well, in most of the time it is true). So, I decided to build ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/16</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "AWS">AWS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Lambda">Lambda</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Serverless">Serverless</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Node.js">Node.js</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Git">Git</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "GitHub">GitHub</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>In job ads, companies usually request candidates to have an active GitHub account to demonstrate their passion for programming. However, lack of green tiles in the heatmap doesn’t necessarily mean that the person is not coding at all (well, in most of the time it is true). So, I decided to build a bot to contribute for me every day just in case I’m not in the mood of committing anything on GitHub. The idea is pretty simple and straight-forward. I can make some slight modifications in the file and then commit and push to GitHub. That’s it!</p>
+<p>The initial bash script is like this:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/maoyalu/github_greener_bot.git</span><br><span class="line"><span class="built_in">cd</span> github_greener_bot</span><br><span class="line"><span class="built_in">echo</span> Updated: <span class="variable">$&#123;date&#125;</span> &gt; log.txt</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"Auto update"</span></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<p>It’s just some basic git operations that everyone knows. To make it as fun as possible, I decided to put it on Lambda. One of the reason is that currently I don’t have a server to run my task and I just feel that it’s not an urgent demand for me right now. But the main reason is that I want to explore more about Lambda Function and try to get a taste of it.</p>
+<p>The first barrier I met is <code>git command not found</code>. There is no Git installed on Lambda!!! Come to think about it, it’s a function, of course there is no git available. Then how can I use it?</p>
+<p>After researching on Google, I found two repos that can help with that:</p>
+<ul>
+<li><p><a href="https://github.com/pimterry/lambda-git" target="_blank" rel="noopener">pimterry/<em>lambda-git</em></a> </p>
+<p>It’s a git binary installed through NPM. Basically, you npm install this package locally and then zip and upload everything on lambda. </p>
+</li>
+<li><p><a href="https://github.com/lambci/git-lambda-layer" target="_blank" rel="noopener">lambci/<em>git</em>-<em>lambda</em>-layer</a> </p>
+<p>It’s a layer for Lambda that allows your functions to use <code>git</code> and <code>ssh</code> binaries. I decided to go with this since it is a more recommended way and also I can keep my function small.</p>
+<p>Obviously, I then switched the runtime to Node.js. I’m not a master of shell scripting anyway. Then the second problem came. <strong>As the new <code>nodejs10.x</code> runtime uses a completely different OS, both methods are not yet compatible with that runtime.</strong> At least, at the time of writing (October 16th, 2019), it doesn’t work. So, I have to use the <code>nodejs8.10</code> instead for now.</p>
+</li>
+</ul>
+<p>After a lot of trial-and-errors, my final script looks like this:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; execSync &#125; = <span class="built_in">require</span>(<span class="string">'child_process'</span>);</span><br><span class="line"></span><br><span class="line">exports.handler = <span class="keyword">async</span>(event) =&gt; &#123;</span><br><span class="line">    <span class="comment">// Configure in Lambda environment</span></span><br><span class="line">    <span class="keyword">let</span> token = process.env.GH_TOKEN;</span><br><span class="line">    <span class="keyword">let</span> email = process.env.GH_EMAIL;</span><br><span class="line">    <span class="keyword">let</span> user = process.env.GH_USERNAME;</span><br><span class="line">    <span class="keyword">let</span> repo = process.env.GH_REPO;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Customize commit message</span></span><br><span class="line">    <span class="keyword">let</span> commitMessage = <span class="string">"Lazy..."</span>;</span><br><span class="line"></span><br><span class="line">    execSync(<span class="string">'rm -rf /tmp/*'</span>)</span><br><span class="line">    execSync(<span class="string">`git clone https://github.com/<span class="subst">$&#123;user&#125;</span>/<span class="subst">$&#123;repo&#125;</span>.git /tmp/bot`</span>)</span><br><span class="line">    execSync(<span class="string">'echo Updated: $(date) &gt; /tmp/bot/log.txt'</span>)</span><br><span class="line">    execSync(<span class="string">`cd /tmp/bot &amp;&amp; git remote set-url origin https://<span class="subst">$&#123;user&#125;</span>:<span class="subst">$&#123;token&#125;</span>@github.com/<span class="subst">$&#123;user&#125;</span>/<span class="subst">$&#123;repo&#125;</span>.git &amp;&amp; git config --local user.name <span class="subst">$&#123;user&#125;</span> &amp;&amp; git config --local user.email <span class="subst">$&#123;email&#125;</span> &amp;&amp; git add . &amp;&amp; git commit -m "<span class="subst">$&#123;commitMessage&#125;</span>" &amp;&amp; git push`</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Then I set up the environment variables so that my token is not hard-coded in the script. BTW, authentication took me quite some time as well. I don’t want my password to show up in the script, and then I found that I can generate a token for use in the Developer Settings. Nice! As stated in the documentation, environment variables are encrypted at runtime, so it should be fine. Notice that it is not encrypted when you upload your sensitive information to Lambda, so it is recommended that you use their Key Management Service (KMS) to encrypt the token before you upload it to Lambda. I’m not sure if AWS charged me $0.1 for creating a KMS key. My recommendation is that if your GitHub account is full of rubbish just like me, you can leave anything as default.</p>
+<p>Oh, I also try my best to make it easier to customize for other people’s use, although I think nobody except me would do this kind of silly thing. LOL</p>
+<p>The last step is to add a trigger to run the function. We have two options, Rate and Cron. If you don’t know how to write them, <strong><a href="https://docs.aws.amazon.com/lambda/latest/dg/tutorial-scheduled-events-schedule-expressions.html" target="_blank" rel="noopener">Schedule Expressions Using Rate or Cron</a></strong> here it has excellent examples that you can directly use with slight adjustments.</p>
+<p>And… That’s it! I know it’s a silly thing to do, but I had fun setting everything up.</p>
+<p>If I would improve this bot by any chance, maybe it would better if it can commit for random times, or support other operations like pull requests and issues. And if I do commit myself, it can take a rest. I hope HR won’t be mad at me for this when they check my GitHub. </p>
+<p>Life is so hard without a PR. </p>
+<p>Treat yourself better. </p>
+<p>Let the bot keeps your GitHub profile green for you.</p>
+<p>PEACE</p>
+
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/10/11/Translate-PDF-using-Google-Drive/" >
-            
-                <span>Translate PDF using Google Drive</span>
-        </a>
-        <div class="abstract-content">
-            Steps
-Upload the target PDF file to Google Drive
-Right click the PDF file and open it with Google Doc
-Under the Tools menu, choose Translate document.
-Rename the translated copy, and then choose the target language, for example English. When you click the Translate button, a new file will be save...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/11</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/10/10/Building-Serverless-REST-API-with-Node-js-AWS-Lambda-API-Gateway-DynamoDB-and-Serverless-Framework/" >
-            
-                <span>Building Serverless REST API with Node.js, AWS Lambda, API Gateway, DynamoDB, and Serverless Framework</span>
-        </a>
-        <div class="abstract-content">
-            
-Install the serverless framework
-1npm install -g serverless
-
-
-
-Configure AWS IAM keys
-Replace [Access key ID] and [Secret access key] with your IAM credentials. If you don’t have it, create one in the AWS console, My Security Credentials.
-1serverless config credentials --provider aws --key [Acce...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "AWS">AWS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Lambda">Lambda</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Serverless">Serverless</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Node.js">Node.js</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "API">API</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "DynamoDB">DynamoDB</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/09/01/Dismiss-keyboard-in-iOS-Swift/" >
-            
-                <span>Dismiss keyboard in iOS (Swift)</span>
-        </a>
-        <div class="abstract-content">
-            
-Add UITextFieldDelegate to the view controller.
-In order to enable the return key function, you should implement the textFieldShouldReturn function and set the delegate of the text field to self.
-In order to close the keyboard when users touch the screen, you can override the touchesBegan functi...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/01</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Swift">Swift</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "iOS">iOS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Xcode">Xcode</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/04/24/How-To-Use-OVA-file-with-VirtualBox/" >
-            
-                <span>How To Use OVA file with VirtualBox</span>
-        </a>
-        <div class="abstract-content">
-            
-Select File and choose Import Appliance…
-Choose the OVA file, and click “Next”
-Examine the Appliances settings and make any changes if needed
-Click “import” and wait
-
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "VirtuaBox">VirtuaBox</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/04/21/VirtualBox-Android-VM-cannot-boot-into-GUI/" >
-            
-                <span>VirtualBox Android VM cannot boot into GUI</span>
-        </a>
-        <div class="abstract-content">
-            ProblemAfter successfully installed and started the Android virtual machine, it booted into the command line interface instead of the GUI.
-The message showing is as follow:
-
-Detecting Android-x86… found at /dev/sda3
-ANDROID x86_64:/ # _
-
-SolutionGo to the settings of the VM.
-In the Display tab:
-S...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "VirtualBox">VirtualBox</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Android">Android</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/11/24/MERN-cheetsheet/" >
-            
-                <span>MERN cheetsheet</span>
-        </a>
-        <div class="abstract-content">
-            Create a project. A file named package.json will be created in the root directory.
-1npm init
-Install express. --save option will save the dependency in the package.json file.
-1npm install express --save
-Check what packages are installed.
-1npm ls --depth=0
-Create a file called server.js in the roo...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/24</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/03/Delete-all-commit-histories-in-GitHub/" >
-            
-                <span>Delete all commit histories in GitHub</span>
-        </a>
-        <div class="abstract-content">
-            Because I just started using Git, sometimes I have 10+ commits just to properly set up my repository. Deleting all clumsy commit history can make me professional (not true).
-Step 1. Checkout
-1git checkout --orphan new_branch
-Step 2. Add all files
-1git add -A
-Step 3. Commit changes
-1git commit -am...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Git">Git</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/03/Remove-files-from-GitHub-which-are-in-gitignore/" >
-            
-                <span>Remove files from GitHub which are in .gitignore</span>
-        </a>
-        <div class="abstract-content">
-            Step 1
-1git rm -r --cached .
-Step 2
-1git add .
-Step 3
-1git commit -am &quot;Remove ignored files&quot;
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Git">Git</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/02/PyCharm-Git-Push-rejected-Push-to-origin-master-was-rejected/" >
-            
-                <span>PyCharm Git Push rejected: Push to origin/master was rejected</span>
-        </a>
-        <div class="abstract-content">
-            When I tried to commit and push to my GitHub repository, it shows the error below:
-1Push rejected: Push to origin/master was rejected
-Solution:
-Go to the root directory of the project
-
-Right click, choose ‘Git Bash here’
-
-Use command
-
-1git pull origin master --allow-unrelated-histories
-Edit file
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Git">Git</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "PyCharm">PyCharm</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/10/11/Translate-PDF-using-Google-Drive/" title= Translate PDF using Google Drive >
+                    <div class="prevTitle">Translate PDF using Google Drive</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid= MTAyMC8zODU4Ny8xNTExNQ==>
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
     
-    <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">NEXT &#62;</a>
-    </nav>
     
+    <!--PC和WAP自适应版-->
+
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -791,6 +568,24 @@ Edit file
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1249,6 +1044,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
