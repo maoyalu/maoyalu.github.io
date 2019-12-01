@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta name="Cache-Control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Dismiss keyboard in iOS (Swift) · YALU STUDIO</title>
+    <title>JavaScript Notes · YALU STUDIO</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -210,7 +210,7 @@
                 <a href="/" >&lt; YALU STUDIO &gt;</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Dismiss keyboard in iOS (Swift)</a>
+                <a href="#" class="post-name">JavaScript Notes</a>
             </div>
     </div>
     
@@ -242,7 +242,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Dismiss keyboard in iOS (Swift)
+            JavaScript Notes
             <!-- 404 -->
             
         </h1>
@@ -259,24 +259,14 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
-                    <div class= post-intro-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Swift">Swift</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "iOS">iOS</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Xcode">Xcode</a>
-    
-</div>
-                
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count">202</span> / Reading time: <span class="post-count">1 min</span></span>
+                        <span>Word count: <span class="post-count">568</span> / Reading time: <span class="post-count">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/09/01</span>
+                    <span class="post-intro-time">2019/11/28</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -400,13 +390,167 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <ol>
-<li>Add <code>UITextFieldDelegate</code> to the view controller.</li>
-<li>In order to enable the return key function, you should implement the <code>textFieldShouldReturn</code> function and set the delegate of the text field to self.</li>
-<li>In order to close the keyboard when users touch the screen, you can override the <code>touchesBegan</code> function</li>
-</ol>
-<h5 id="Fail-to-dismiss-keyboard-in-scroll-views"><a href="#Fail-to-dismiss-keyboard-in-scroll-views" class="headerlink" title="Fail to dismiss keyboard in scroll views"></a>Fail to dismiss keyboard in scroll views</h5><p>Inside a scroll view, <code>touchesBegan</code> function does not work. In order to solve this, one simple way is to go to the storyboard, select the scroll view. In the inspector, find keyboard attribute, and set it to <code>Dismiss on drag</code>. Although it is not as smooth as touches, it can temporarily solve the problem.</p>
-<h3 id="Sample-code"><a href="#Sample-code" class="headerlink" title="Sample code"></a>Sample code</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">exampleViewController</span>: <span class="title">UIViewController</span>, <span class="title">UITextFieldDelegate</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad()</span><br><span class="line">        </span><br><span class="line">        example1TextField.delegate = <span class="keyword">self</span></span><br><span class="line">        example2TextField.delegate = <span class="keyword">self</span></span><br><span class="line">        example3TextField.delegate = <span class="keyword">self</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">textFieldShouldReturn</span><span class="params">(<span class="number">_</span> textField: UITextField)</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.view.endEditing(<span class="literal">true</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Dismiss the keyboard when user touches the screen</span></span><br><span class="line">    <span class="comment">// It doesn't work when it's in a scroll view</span></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">touchesBegan</span><span class="params">(<span class="number">_</span> touches: Set&lt;UITouch&gt;, with event: UIEvent?)</span></span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.view.endEditing(<span class="literal">true</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="Types-Values-and-Variables"><a href="#Types-Values-and-Variables" class="headerlink" title="Types, Values, and Variables"></a>Types, Values, and Variables</h1><h2 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h2><p>NaN does not compare equal to any other value, including itself.</p>
+<p>You can’t write <code>x === NaN</code>.</p>
+<p>Instead, you should write <code>x != x</code> or <code>Number.isNaN(x)</code></p>
+<h2 id="Text"><a href="#Text" class="headerlink" title="Text"></a>Text</h2><p>JavaScript uses the UTF-16 encoding of the Unicode character set. Unicode characters whose codepoints do not fit in 16 bits are encoded following the rules of UTF-16 as a sequence of two 16-bit values.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> e = <span class="string">"𝑒"</span></span><br><span class="line">e.length <span class="comment">// =&gt; 2</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Template-Strings"><a href="#Template-Strings" class="headerlink" title="Template Strings"></a>Template Strings</h2><p>ES6 has a built-in tag function <code>String.raw()</code> which returns the text within backticks raw, without any processing of backslash escapes:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.raw<span class="string">`\n`</span> <span class="comment">// =&gt; \n</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="null-and-undefined"><a href="#null-and-undefined" class="headerlink" title="null and undefined"></a>null and undefined</h2><table>
+<thead>
+<tr>
+<th></th>
+<th><code>null</code></th>
+<th><code>undefined</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Language keyword</td>
+<td>yes</td>
+<td>no (predefined global constant)</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>object</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>Meaning</td>
+<td>A speacial object value that indicates “no object”</td>
+<td>The value of variables that have not been initialized and the value you get when you query the value of an object property or array element that does not exist</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span> == <span class="literal">undefined</span> <span class="comment">// =&gt; true</span></span><br><span class="line"><span class="literal">null</span> === <span class="literal">undefined</span> <span class="comment">// =&gt; false</span></span><br></pre></td></tr></table></figure>
+<h2 id="Type-Conversions"><a href="#Type-Conversions" class="headerlink" title="Type Conversions"></a>Type Conversions</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">8</span> + <span class="string">" yalu"</span> <span class="comment">// =&gt; "8 yalu"</span></span><br><span class="line"><span class="string">"2"</span> * <span class="string">"7"</span> <span class="comment">// =&gt; 14</span></span><br><span class="line"><span class="number">1</span> - <span class="string">"x"</span> <span class="comment">// =&gt; NaN</span></span><br><span class="line">n + <span class="string">" yalu"</span> <span class="comment">// =&gt; "NaN yalu"</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>to String</th>
+<th>to Number</th>
+<th>to Boolean</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>undefined</td>
+<td>“undefined”</td>
+<td>NaN</td>
+<td>false</td>
+</tr>
+<tr>
+<td>null</td>
+<td>“null”</td>
+<td>0</td>
+<td>false</td>
+</tr>
+<tr>
+<td>true</td>
+<td>“true”</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>false</td>
+<td>“false”</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td>“”</td>
+<td></td>
+<td>0</td>
+<td>false</td>
+</tr>
+<tr>
+<td>“2.7”</td>
+<td></td>
+<td>2.7</td>
+<td>true</td>
+</tr>
+<tr>
+<td>“one”</td>
+<td></td>
+<td>NaN</td>
+<td>true</td>
+</tr>
+<tr>
+<td>0</td>
+<td>“0”</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>-0</td>
+<td>“0”</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>NaN</td>
+<td>“NaN”</td>
+<td></td>
+<td>false</td>
+</tr>
+<tr>
+<td>Infinity</td>
+<td>“Infinity”</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>-Infinity</td>
+<td>“-Infinity”</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>1</td>
+<td>“1”</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>{} (any object)</td>
+<td></td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>“”</td>
+<td>0</td>
+<td>false</td>
+</tr>
+<tr>
+<td>[2] (one numeric element)</td>
+<td>“2”</td>
+<td>2</td>
+<td>true</td>
+</tr>
+<tr>
+<td>[‘a’] (any other array)</td>
+<td>use join()</td>
+<td>NaN</td>
+<td>true</td>
+</tr>
+<tr>
+<td>function(){} (any function)</td>
+<td></td>
+<td>NaN</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p>You can convert numbers in other bses (between 2 and 36).<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> n = <span class="number">17</span>；</span><br><span class="line"><span class="keyword">let</span> binary = <span class="string">"0b"</span> + n.toString(<span class="number">2</span>); <span class="comment">// =&gt; "0b10001"</span></span><br><span class="line"><span class="keyword">let</span> octal = <span class="string">"0o"</span> + n.toString(<span class="number">8</span>) <span class="comment">// =&gt; "0o21"</span></span><br><span class="line"><span class="keyword">let</span> hex = <span class="string">"0x"</span> + n.toString(<span class="number">16</span>) <span class="comment">// =&gt; "0x11"</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Variable-Declaration-and-Assignment"><a href="#Variable-Declaration-and-Assignment" class="headerlink" title="Variable Declaration and Assignment"></a>Variable Declaration and Assignment</h2><p><code>let</code> declares variables that change.</p>
+<p><code>const</code> declares constant variable.</p>
+<p>It is an <strong>untyped</strong> language, so a JavaScript variable can hold a vlue of any type.</p>
+<p><code>var</code> has the same syntax as <code>let</code>. However, it does not have block scope. Instead, it is scoped to the body of the containing function no matter how deeply nested it is inside the function. When it is outside of a function body, it declares a global variable and is implemented as properties of the global object. For example, <code>var x = 2</code> is like <code>global.x = 2;</code> or <code>window.x = 2;</code>. And it cannot be deleted with the <code>delete</code> operator.</p>
+<h2 id="Destructuring-Assignment"><a href="#Destructuring-Assignment" class="headerlink" title="Destructuring Assignment"></a>Destructuring Assignment</h2><p>The value on the right-hand side of the equals sign is an array or object (a “structured” value) and the left-hand side specifies one or more variable names using a syntax that mimics array and object literal syntax.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [x, y] = [<span class="number">1</span>, <span class="number">2</span>] <span class="comment">// x =&gt; 1, y =&gt; 2</span></span><br><span class="line">[x, y] = [y, x] <span class="comment">// x =&gt; 2, y =&gt; 1</span></span><br><span class="line">[x, y] = [<span class="number">1</span>] <span class="comment">// x =&gt; 1, y =&gt; undefined</span></span><br><span class="line">[x, y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="comment">// x =&gt; 1, y =&gt; 2</span></span><br><span class="line">[ , x, , y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>] <span class="comment">// x =&gt; 2, y =&gt; 4</span></span><br><span class="line">[x, ...y] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>] <span class="comment">// x =&gt; 1, y =&gt; [2, 3, 4]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> transparent = &#123;<span class="attr">r</span>: <span class="number">0.0</span>, <span class="attr">g</span>: <span class="number">0.0</span>, <span class="attr">b</span>: <span class="number">0.0</span>, <span class="attr">a</span>: <span class="number">1.0</span>&#125;;</span><br><span class="line"><span class="keyword">let</span> &#123;r, g, b&#125; = transparent; <span class="comment">// r = 0.0, g = 0.0, b = 0.0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> &#123;sin, cos, tan&#125; = <span class="built_in">Math</span>; <span class="comment">// sin = Math.sin, cos = Math.cos, tan = Math.tan</span></span><br><span class="line">&#123;<span class="attr">cos</span>: cosine, <span class="attr">tan</span>: tangent&#125; = <span class="built_in">Math</span>; <span class="comment">// cosine = Math.cos, tangent = Math.tan</span></span><br></pre></td></tr></table></figure>
+<p>If  the left-hand side of the assignment had included a variable whose name was not  a property of the object, that variable would be assigned <code>undefined</code>.</p>
 
     </article>
     <!-- license  -->
@@ -415,17 +559,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2019/10/10/Building-Serverless-REST-API-with-Node-js-AWS-Lambda-API-Gateway-DynamoDB-and-Serverless-Framework/" title= Building Serverless REST API with Node.js, AWS Lambda, API Gateway, DynamoDB, and Serverless Framework >
-                    <div class="nextTitle">Building Serverless REST API with Node.js, AWS Lambda, API Gateway, DynamoDB, and Serverless Framework</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2019/04/24/How-To-Use-OVA-file-with-VirtualBox/" title= How To Use OVA file with VirtualBox >
-                    <div class="prevTitle">How To Use OVA file with VirtualBox</div>
+                <a href= "/2019/10/16/Build-a-bot-with-Lambda-to-auto-update-my-GitHub/" title= Build a bot with Lambda to auto update my GitHub >
+                    <div class="prevTitle">Build a bot with Lambda to auto update my GitHub</div>
                 </a>
             
         </li>
@@ -564,7 +703,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Fail-to-dismiss-keyboard-in-scroll-views"><span class="toc-number">1.</span> <span class="toc-text">Fail to dismiss keyboard in scroll views</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-code"><span class="toc-number"></span> <span class="toc-text">Sample code</span></a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Types-Values-and-Variables"><span class="toc-number">1.</span> <span class="toc-text">Types, Values, and Variables</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#NaN"><span class="toc-number">1.1.</span> <span class="toc-text">NaN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Text"><span class="toc-number">1.2.</span> <span class="toc-text">Text</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Template-Strings"><span class="toc-number">1.3.</span> <span class="toc-text">Template Strings</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null-and-undefined"><span class="toc-number">1.4.</span> <span class="toc-text">null and undefined</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Type-Conversions"><span class="toc-number">1.5.</span> <span class="toc-text">Type Conversions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Variable-Declaration-and-Assignment"><span class="toc-number">1.6.</span> <span class="toc-text">Variable Declaration and Assignment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Destructuring-Assignment"><span class="toc-number">1.7.</span> <span class="toc-text">Destructuring Assignment</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
