@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta name="Cache-Control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>YALU STUDIO</title>
+    <title>SQL Notes · YALU STUDIO</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -70,6 +70,8 @@
 
     <link rel="preload" href= /css/style.css?v=20180721 as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= /css/mobile.css?v=20180721 media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -194,12 +196,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >&lt; YALU STUDIO &gt;</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">SQL Notes</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>< YALU STUDIO ></a>
 </header>
@@ -213,24 +226,68 @@
 
 
 
+height:50vh;
+
 >
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            SQL Notes
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count">637</span> / Reading time: <span class="post-count">4 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/01/04</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -331,36 +388,164 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/28/JavaScript-Notes/" >
-            
-                <span>JavaScript Notes</span>
-        </a>
-        <div class="abstract-content">
-            Types, Values, and VariablesNaNNaN does not compare equal to any other value, including itself.
-You can’t write x === NaN.
-Instead, you should write x != x or Number.isNaN(x)
-TextJavaScript uses the UTF-16 encoding of the Unicode character set. Unicode characters whose codepoints do not fit in 16...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/28</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h3 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h3><p>SQL stands for <strong>Structured Query Language</strong>. </p>
+<p>RDBMS stands for <strong>Relational Database Management System</strong>.</p>
+<h4 id="DDL-Data-Definition-Language"><a href="#DDL-Data-Definition-Language" class="headerlink" title="DDL - Data Definition Language"></a>DDL - Data Definition Language</h4><ul>
+<li><p><code>CREATE</code> - Creates a new table, a view of a table, or other object in the database</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name(</span><br><span class="line">column1 datatype,</span><br><span class="line">column2 datatype,</span><br><span class="line">column3 datatype,</span><br><span class="line">...</span><br><span class="line">columnN datatype,</span><br><span class="line">PRIMARY <span class="keyword">KEY</span> (one <span class="keyword">or</span> more <span class="keyword">columns</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>ALTER</code> - Modifies an existing database object, such as a table</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name</span><br><span class="line">&#123;<span class="keyword">ADD</span>|<span class="keyword">DROP</span>|<span class="keyword">MODIFY</span>&#125; column_name &#123;datatype&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> employees</span><br><span class="line">	<span class="keyword">DROP</span> <span class="keyword">CONSTRAINT</span> employees_pk;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>DROP</code> - Deletes an entire table, a view of a table or other objects in the database</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> table_name</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="DML-Data-Manipulation-Language"><a href="#DML-Data-Manipulation-Language" class="headerlink" title="DML - Data Manipulation Language"></a>DML - Data Manipulation Language</h4><ul>
+<li><p><code>SELECT</code> - Retrieves certain records from one or more tables</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, ...columnN</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> CONDITION<span class="number">-1</span> &#123;<span class="keyword">AND</span>|<span class="keyword">OR</span>&#125; CONDITION<span class="number">-2</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> column_name &#123;<span class="keyword">ASC</span>|<span class="keyword">DESC</span>&#125;</span><br><span class="line"><span class="keyword">HAVING</span> (arithematic <span class="keyword">function</span> condition);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>INSERT</code> - Creates a record</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table_name (column1, column2, ...columnN)</span><br><span class="line"><span class="keyword">VALUES</span> (value1, value2, ...valueN);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>UPDATE</code> - Modifies records</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> table_name</span><br><span class="line"><span class="keyword">SET</span> column1 = value1, column2 = value2, ...columnN = valueN</span><br><span class="line">[<span class="keyword">WHERE</span> CONDITION];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>DELETE</code> - Deletes records</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> &#123;CONDITION&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="DCL-Data-Control-Language"><a href="#DCL-Data-Control-Language" class="headerlink" title="DCL - Data Control Language"></a>DCL - Data Control Language</h4><ul>
+<li><code>GRANT</code> - Gives a privilege to user</li>
+<li><code>REVOKE</code> Takes back privileges granted from user</li>
+</ul>
+<h3 id="Other-syntaxes"><a href="#Other-syntaxes" class="headerlink" title="Other syntaxes"></a>Other syntaxes</h3><ul>
+<li><p><code>LIKE</code></p>
+<ul>
+<li><code>%</code> represents zero, one or multiple characters</li>
+<li><code>_</code>  represents a single number or character.</li>
+</ul>
+</li>
+<li><p><code>ORDER BY</code></p>
+<ul>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> customers</span><br><span class="line">	<span class="keyword">ORDER</span> <span class="keyword">BY</span> (<span class="keyword">CASE</span> address</span><br><span class="line">             <span class="keyword">WHEN</span> <span class="string">'DELHI'</span> <span class="keyword">THEN</span> <span class="number">1</span></span><br><span class="line">             <span class="keyword">WHEN</span> <span class="string">'BHOPAL'</span> <span class="keyword">THEN</span> <span class="number">2</span></span><br><span class="line">             <span class="keyword">WHEN</span> <span class="string">'KOTA'</span> <span class="keyword">THEN</span> <span class="number">3</span></span><br><span class="line">             <span class="keyword">WHEN</span> <span class="string">'AHMADABAD'</span> <span class="keyword">THEN</span> <span class="number">4</span></span><br><span class="line">             <span class="keyword">WHEN</span> <span class="string">'MP'</span> <span class="keyword">THEN</span> <span class="number">5</span></span><br><span class="line">             <span class="keyword">ELSE</span> <span class="number">100</span> <span class="keyword">END</span>) <span class="keyword">ASC</span>, ADDRESS <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>First sort in your own order, then order the rest by address in reverse alphabetical order</p>
+</li>
+</ul>
+</li>
+<li><p><code>JOIN</code> - a means for combining fields from two tables by using values common to each</p>
+<ul>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>, <span class="keyword">name</span>, amount, <span class="built_in">date</span></span><br><span class="line"><span class="keyword">FROM</span> customers</span><br><span class="line"><span class="keyword">JOIN</span> orders</span><br><span class="line"><span class="keyword">ON</span> customers.id = orders.customer_id;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>, <span class="keyword">name</span>, age, amout</span><br><span class="line"><span class="keyword">FROM</span> customers, orders</span><br><span class="line"><span class="keyword">WHERE</span> customers.id = orders.customer_id;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h3><ul>
+<li><code>NOT NULL</code> - Ensures that a column cannot have a NULL value</li>
+<li><code>DEFAULT</code> - Provides a default value for a column when none is specified</li>
+<li><code>UNIQUE</code> - Ensures that all the values in a column are different</li>
+<li><code>PRIMARY KEY</code> - Uniquely identifies each row in a database table</li>
+<li><code>FOREIGN KEY</code> - Uniquely identifies a row in any other database table</li>
+<li><code>CHECK</code> - Ensures that all values in a column satisfy certain conditions</li>
+<li><code>INDEX</code> - Used to create and retrieve data from the database very quickly</li>
+</ul>
+<h3 id="Data-Integrity"><a href="#Data-Integrity" class="headerlink" title="Data Integrity"></a>Data Integrity</h3><ul>
+<li>Entity integrity - There are no duplicate rows in a table</li>
+<li>Domain Integrity - Enforces valid entries for a given column by restricting the type, the format, or the range of values</li>
+<li>Referential integrity - Rows cannot be deleted, which are used by other records</li>
+<li>User-Defined Integrity - Enforces some specific business rules that do not fall into entity, domain or referential integrity</li>
+</ul>
+<h3 id="Database-Normalization"><a href="#Database-Normalization" class="headerlink" title="Database Normalization"></a>Database Normalization</h3><p>Why?</p>
+<ul>
+<li>Eliminating redundant data, for example, storing the same data in more than one table</li>
+<li>Ensuring data dependencies make sense</li>
+</ul>
+<p>Guidelines</p>
+<ul>
+<li>First Normal Form</li>
+<li>Second Normal Form</li>
+<li>Third Normal Form</li>
+</ul>
+<h3 id="Transactions"><a href="#Transactions" class="headerlink" title="Transactions"></a>Transactions</h3><ul>
+<li><p>Properties</p>
+<ul>
+<li><strong>Atomicity</strong> - Ensures that all operations within the work unit are completed successfully. Otherwise, the transaction is aborted at the point of failure and all the previous operations are rolled back to their former state.</li>
+<li><strong>Consistency</strong> - Ensures that the database properly changes states upon a successfully committed transaction</li>
+<li><strong>Isolation</strong> - Enables transactions to operate independently of and transparent to each other</li>
+<li><strong>Durability</strong> - Ensures that the result or effect of a committed transaction persists in case of a system failure</li>
+</ul>
+</li>
+<li><p>Control</p>
+<ul>
+<li><p><strong>COMMIT</strong> - to save the changes</p>
+<ul>
+<li>Only used with the DML Commands such as <code>INSERT</code>, <code>UPDATE</code> and <code>DELETE</code></li>
+</ul>
+</li>
+<li><p><strong>ROLLBACK</strong> - to roll back the changes</p>
+</li>
+<li><p><strong>SAVEPOINT</strong> - creates points within the groups of transactions in which to ROLLBACK</p>
+<ul>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SAVEPOINT</span> savepoint_name;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ROLLBACK</span> <span class="keyword">TO</span> savepoint_name;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>SET TRANSACTION</strong> - places a name on a transaction</p>
+</li>
+</ul>
+</li>
+</ul>
+
     </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/01/03/Interview-Questions-Preparation/" title= Interview Questions Preparation >
+                    <div class="prevTitle">Interview Questions Preparation</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid= MTAyMC8zODU4Ny8xNTExNQ==>
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!--PC和WAP自适应版-->
+
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -449,6 +634,24 @@ TextJavaScript uses the UTF-16 encoding of the Unicode character set. Unicode ch
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL"><span class="toc-number">1.</span> <span class="toc-text">SQL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DDL-Data-Definition-Language"><span class="toc-number">1.1.</span> <span class="toc-text">DDL - Data Definition Language</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DML-Data-Manipulation-Language"><span class="toc-number">1.2.</span> <span class="toc-text">DML - Data Manipulation Language</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DCL-Data-Control-Language"><span class="toc-number">1.3.</span> <span class="toc-text">DCL - Data Control Language</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Other-syntaxes"><span class="toc-number">2.</span> <span class="toc-text">Other syntaxes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Constraints"><span class="toc-number">3.</span> <span class="toc-text">Constraints</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-Integrity"><span class="toc-number">4.</span> <span class="toc-text">Data Integrity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Database-Normalization"><span class="toc-number">5.</span> <span class="toc-text">Database Normalization</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Transactions"><span class="toc-number">6.</span> <span class="toc-text">Transactions</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1042,6 +1245,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
