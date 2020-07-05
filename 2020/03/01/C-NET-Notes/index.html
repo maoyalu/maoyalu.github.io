@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta name="Cache-Control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Interview Questions Preparation · YALU STUDIO</title>
+    <title>C# .NET Notes · YALU STUDIO</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -210,7 +210,7 @@
                 <a href="/" >&lt; YALU STUDIO &gt;</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Interview Questions Preparation</a>
+                <a href="#" class="post-name">C# .NET Notes</a>
             </div>
     </div>
     
@@ -242,7 +242,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Interview Questions Preparation
+            C# .NET Notes
             <!-- 404 -->
             
         </h1>
@@ -261,12 +261,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count">104</span> / Reading time: <span class="post-count">1 min</span></span>
+                        <span>Word count: <span class="post-count">233</span> / Reading time: <span class="post-count">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2020/01/03</span>
+                    <span class="post-intro-time">2020/03/01</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -390,23 +390,54 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h3 id="Tell-me-about-yourself"><a href="#Tell-me-about-yourself" class="headerlink" title="Tell me about yourself"></a>Tell me about yourself</h3><p>Name</p>
-<p>Location</p>
-<p>Career Aspiration</p>
-<p>Your Past Experience</p>
-<p>Your Hobbies</p>
-<h3 id="What-are-your-strengths"><a href="#What-are-your-strengths" class="headerlink" title="What are your strengths"></a>What are your strengths</h3><p>Points &amp; cases</p>
-<h3 id="What-are-your-weaknesses"><a href="#What-are-your-weaknesses" class="headerlink" title="What are your weaknesses"></a>What are your weaknesses</h3><p>Points &amp; cases</p>
-<h3 id="What-you-know-about-this-company"><a href="#What-you-know-about-this-company" class="headerlink" title="What you know about this company"></a>What you know about this company</h3><ul>
-<li>company website</li>
-<li>financial earning</li>
-<li>where are the company heading</li>
-<li>company slogan</li>
-<li>how to add value</li>
-</ul>
-<h3 id="Why-did-you-apply-to-this-position"><a href="#Why-did-you-apply-to-this-position" class="headerlink" title="Why did you apply to this position"></a>Why did you apply to this position</h3><p>how when you join this company you would add value to the company and in return the company could give you experience that could lead you to your career goals or career aspiration</p>
-<h3 id="Why-should-we-hire-you"><a href="#Why-should-we-hire-you" class="headerlink" title="Why should we hire you"></a>Why should we hire you</h3><p>cases</p>
-<h3 id="Where-do-you-see-yourself-in-next-2-years-or-5-years"><a href="#Where-do-you-see-yourself-in-next-2-years-or-5-years" class="headerlink" title="Where do you see yourself in next 2 years or 5 years"></a>Where do you see yourself in next 2 years or 5 years</h3>
+        <h1 id="Code-snippet-shortcut"><a href="#Code-snippet-shortcut" class="headerlink" title="Code snippet shortcut"></a>Code snippet shortcut</h1><p>Press <code>tab</code> twice to use code snippets</p>
+<p><code>cw</code> -&gt; <code>Console.WriteLine();</code></p>
+<p><code>props</code></p>
+<h1 id="String-Format"><a href="#String-Format" class="headerlink" title="String Format"></a>String Format</h1><ol>
+<li><code>C</code> or <code>c</code> -&gt; Currency</li>
+</ol>
+<p><code>Console.WriteLine(&quot;{0:c}&quot;, 99999);</code></p>
+<p>> $99,999.00</p>
+<ol start="2">
+<li><code>D</code> or <code>d</code> -&gt; Decimal numbers with padding</li>
+</ol>
+<p><code>Console.WriteLine({0:d9}, 99999);</code></p>
+<p>> 000099999</p>
+<ol start="3">
+<li><code>F</code> or <code>f</code> -&gt; Fixed-point with padding</li>
+</ol>
+<p><code>Console.WriteLine({0:f3}, 99999);</code></p>
+<p>> 99999.000</p>
+<ol start="4">
+<li><code>N</code> or <code>n</code> -&gt; Basic numerical formatting (with commas)</li>
+</ol>
+<p><code>Console.WriteLine({0:n}, 99999);</code></p>
+<p>> 99,999.00</p>
+<ol start="5">
+<li><code>E</code> or <code>e</code> -&gt; Exponential notation</li>
+</ol>
+<p><code>Console.WriteLine({0:E}, 99999);</code></p>
+<p>> 9.999900E+004</p>
+<p><code>Console.WriteLine({0:e}, 99999);</code></p>
+<p>> 9.999900e+004</p>
+<ol start="6">
+<li><code>X</code> or <code>x</code> -&gt; Hexadecimal</li>
+</ol>
+<p><code>Console.WriteLine({0:X}, 99999);</code></p>
+<p>> 1869F</p>
+<p><code>Console.WriteLine({0:x}, 99999);</code></p>
+<p>> 1869f</p>
+<ol start="7">
+<li><code>G</code> or <code>g</code></li>
+</ol>
+<h3 id="Verbatim-Strings"><a href="#Verbatim-Strings" class="headerlink" title="Verbatim Strings"></a>Verbatim Strings</h3><p>Prefix a string with<code>@</code>, you can have the string as it is.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(@&quot;C:\MyApp\bin\Debug&quot;)</span><br></pre></td></tr></table></figure>
+<h1 id="Datetime"><a href="#Datetime" class="headerlink" title="Datetime"></a>Datetime</h1><p><code>DateTime dt = new DateTime(1995, 2, 2);</code></p>
+<h2 id="Conditions"><a href="#Conditions" class="headerlink" title="Conditions"></a>Conditions</h2><p>Switch</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">switch(choice)</span><br><span class="line">&#123;</span><br><span class="line">    case int i when i == 2:</span><br><span class="line">    case string s when s.Equals(&quot;VB&quot;, StringComparison.OrdinalIgnoreCase):</span><br><span class="line">        Console.WriteLine(&quot;VB: OOP, multithreading, and more!&quot;);</span><br><span class="line">        break;</span><br><span class="line">    case int i when i == 1:</span><br><span class="line">    case string s when s.Equals(&quot;C#&quot;, StringComparison.OrdinalIgnoreCase):</span><br><span class="line">        Console.WriteLine(&quot;Good choice, C# is a fine language.&quot;);</span><br><span class="line">        break;</span><br><span class="line">    default:</span><br><span class="line">        Console.WriteLine(&quot;Well...good luck with that!&quot;);</span><br><span class="line">        break;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Interface"><a href="#Interface" class="headerlink" title="Interface"></a>Interface</h2><p><code>as</code> returns reference or null</p>
+<p><code>is</code> returns true or false</p>
+
     </article>
     <!-- license  -->
     
@@ -415,16 +446,16 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href= "/2020/01/04/SQL-Notes/" title= SQL Notes >
-                    <div class="nextTitle">SQL Notes</div>
+                <a href= "/2020/07/05/How-to-use-Git-Bash-as-Visual-Studio-Code-Terminal-on-Windows/" title= How to use Git Bash as Visual Studio Code Terminal on Windows >
+                    <div class="nextTitle">How to use Git Bash as Visual Studio Code Terminal on Windows</div>
                 </a>
             
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2019/12/25/Node-js-Notes/" title= Node.js Notes >
-                    <div class="prevTitle">Node.js Notes</div>
+                <a href= "/2020/01/08/Fail-to-install-NET-Core-SDK-on-Mac/" title= Fail to install .NET Core SDK on Mac >
+                    <div class="prevTitle">Fail to install .NET Core SDK on Mac</div>
                 </a>
             
         </li>
@@ -563,7 +594,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tell-me-about-yourself"><span class="toc-number">1.</span> <span class="toc-text">Tell me about yourself</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What-are-your-strengths"><span class="toc-number">2.</span> <span class="toc-text">What are your strengths</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What-are-your-weaknesses"><span class="toc-number">3.</span> <span class="toc-text">What are your weaknesses</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#What-you-know-about-this-company"><span class="toc-number">4.</span> <span class="toc-text">What you know about this company</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Why-did-you-apply-to-this-position"><span class="toc-number">5.</span> <span class="toc-text">Why did you apply to this position</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Why-should-we-hire-you"><span class="toc-number">6.</span> <span class="toc-text">Why should we hire you</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Where-do-you-see-yourself-in-next-2-years-or-5-years"><span class="toc-number">7.</span> <span class="toc-text">Where do you see yourself in next 2 years or 5 years</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Code-snippet-shortcut"><span class="toc-number">1.</span> <span class="toc-text">Code snippet shortcut</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#String-Format"><span class="toc-number">2.</span> <span class="toc-text">String Format</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Verbatim-Strings"><span class="toc-number">2.0.1.</span> <span class="toc-text">Verbatim Strings</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Datetime"><span class="toc-number">3.</span> <span class="toc-text">Datetime</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Conditions"><span class="toc-number">3.1.</span> <span class="toc-text">Conditions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Interface"><span class="toc-number">3.2.</span> <span class="toc-text">Interface</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
